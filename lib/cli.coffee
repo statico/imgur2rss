@@ -2,7 +2,7 @@
 
 commander = require 'commander'
 
-lib = require './imgur2rss.coffee'
+i2r = require './imgur2rss.coffee'
 
 commander
   .version(require('../package.json').version)
@@ -12,7 +12,7 @@ commander
   .command('album <albumId>')
   .description('Print an RSS feed for an Imgur album')
   .action (albumId, options) ->
-    lib.album2rss options.parent.clientId, albumId, (err, xml) ->
+    i2r.album2rss options.parent.clientId, albumId, (err, xml) ->
       if err
         console.error "Error: #{ err }"
         process.exit 1

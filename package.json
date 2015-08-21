@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Turns Imgur things into RSS feeds",
   "main": "bin/index.js",
-  "scripts": {
-    "cli": "node bin/cli.js",
-    "server": "node bin/server.js"
+  "bin": {
+    "imgur2rss": "bin/cli.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +22,6 @@
   },
   "homepage": "https://github.com/statico/imgur2rss#readme",
   "dependencies": {
-    "async": "^1.4.2",
     "coffee-script": "^1.9.3",
     "commander": "^2.8.1",
     "escape-html": "^1.0.2",
