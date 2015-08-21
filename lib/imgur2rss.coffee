@@ -26,6 +26,8 @@ exports.album2rss = (clientId, albumId, cb) ->
 
     feed = new RSS(title: body.data.title, site_url: body.data.link, generator: 'imgur2rss')
 
+    body.data.images.sort (a, b) -> a.datetime - b.datetime
+
     for image in body.data.images.slice 0, 10
       feed.item
         title: image.title ? image.id
