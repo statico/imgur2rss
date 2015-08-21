@@ -1,6 +1,6 @@
 {
   "name": "imgur2rss",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Turns Imgur things into RSS feeds",
   "main": "bin/index.js",
   "bin": {

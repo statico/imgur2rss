@@ -12,9 +12,9 @@ It currently only supports Imgur albums.
 $ npm install -g imgur2rss
 
 $ imgur2rss -c YOUR_CLIENT_ID album tleVt
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-...
+<?xml version="1.0" encoding="UTF-8"?>
+<rss ... version="2.0">
+  ...
 ```
 
 ## Usage: Module
