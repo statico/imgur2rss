@@ -56,6 +56,7 @@ exports.album2rss = (clientId, albumId, cb) ->
   return cb "Must specify an album ID" unless albumId
   get clientId, "album/#{ albumId }", null, (err, res, body) ->
     return cb err if err
+    return cb String(body?.data?.error) unless body?.success
     feed = new Feed(body.data.title, body.data.link)
     for image in body.data.images.slice 0, 10
       feed.items.push
