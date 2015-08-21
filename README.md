@@ -10,6 +10,7 @@ It currently only supports Imgur albums.
 
 ```
 $ npm install -g imgur2rss
+
 $ imgur2rss -c YOUR_CLIENT_ID album tleVt
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
@@ -30,5 +31,23 @@ i2r.album2rss clientId, albumId, (err, xml) ->
 
 ## Usage: Heroku
 
+```
+$ git clone https://github.com/statico/imgur2rss.git
+
+$ cd imgur2rss
+
+$ heroku create
+...
+https://someplace-somewhere-1234.herokuapp.com/ ...
+Git remote heroku added
+
+$ git push heroku master
+...
+remote: -----> Launching... done, v1
+remote:        https://someplace-somewhere-1234.herokuapp.com/ deployed to Heroku
+...
+```
+
+Now go to that URL and append `/a/tleVt` to the URL.
 
 
