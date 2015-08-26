@@ -24,9 +24,14 @@ exports.album2rss = (clientId, albumId, cb) ->
     return cb err if err
     return cb String(body?.data?.error) unless body?.success
 
-    feed = new RSS(title: body.data.title, site_url: body.data.link, generator: 'imgur2rss')
-
     body.data.images.sort (a, b) -> a.datetime - b.datetime
+
+    feed = new RSS(
+      title: body.data.title
+      site_url: body.data.link
+      generator: 'imgur2rss'
+      ttl: 60 * 12
+    )
 
     for image in body.data.images.slice 0, 10
       feed.item
@@ -34,5 +39,4 @@ exports.album2rss = (clientId, albumId, cb) ->
         url: "http://imgur.com/#{ image.id }"
         date: new Date(image.datetime * 1000)
         description: """<img src="#{ image.link }" alt="#{ image.title ? image.id }"/>"""
-
     cb null, feed.xml(indent: true)
